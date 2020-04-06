@@ -1,4 +1,5 @@
 /* query ce selecteaza al doilea cuvand din numele produsului*/
+
 ```sql
 SELECT ProductName , 
 
