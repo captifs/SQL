@@ -27,3 +27,13 @@ CROSS  JOIN SalesPersons Dreapta
 WHERE Stanga.SalesPersonFirstName <> Dreapta.SalesPersonFirstName
 
 ORDER BY Stanga.SalesPersonFirstName 
+
+14.Userul sa-si acceseze tablelul lui dupa numele lui
+
+	ALTER VIEW MySales	
+	AS 
+	SELECT * FROM Sales
+	WHERE SalesPersonId = (
+	SELECT SalesPersonId FROM SalesPersons
+	WHERE CONCAT(SalesPersonFirstName,SalesPersonLastName) = USER_NAME()
+)
