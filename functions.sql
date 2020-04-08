@@ -1,4 +1,4 @@
-3. O functie care sa primeasca un parametru de tip datetime si sa returneze c‚te saptam‚ni au trecut de la Ónceputul anului respectiv.
+3. O functie care sa primeasca un parametru de tip datetime si sa returneze c√¢te saptam√¢ni au trecut de la √Ænceputul anului respectiv.
 
 ALTER FUNCTION ABFG(@id DATETIME)
 RETURNS TABLE
@@ -12,7 +12,7 @@ RETURNS TABLE
 RETURN 
 
 
-1. O functie care sa primeasca ca parametru un SalesOrderID si sa returneze toate produsele din comanda respectiva, cantitatea si pretul de v‚nzare.
+1. O functie care sa primeasca ca parametru un SalesOrderID si sa returneze toate produsele din comanda respectiva, cantitatea si pretul de v√¢nzare.
   CREATE FUNCTION ABFirst (@id int)
   RETURNS TABLE
   RETURN
@@ -24,3 +24,9 @@ RETURN
 TBC 
 2. Folosind functia de la punctul 1 creati o alta funcsie care sa primeasca ca parametru un SalesOrderID si sa returneze valoarea totala a comenzii(deci nu aveti voie sa folositi tabelele Sales si OrderDetails)
 4. O functie care sa primeasca doi parametri FirstName si LastName si sa returneze toate persoanele din baza noastra de date cu numele si prenumele respective si sa spuna daca este SalesPerson sau Customer.
+
+SELECT SalesPersons.SalesPersonFirstName as FirstName,SalesPersons.SalesPersonLastName as LastName
+FROM SalesPersons
+UNION 
+SELECT Customers.CustomerFirstName,Customers.CustomerLastName
+FROM Customers
