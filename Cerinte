@@ -1,0 +1,29 @@
+1--FirstName, LastName, AccountNumber, OrderCount, LastOrderDate
+2--La ce adrese s-au livrat comenzile 57122, 57066 ?i 45273
+3--Câte comenzi au fost facute în Montreal
+4--Ce produse a vândut fiecare SalesPerson (SalesPersonFullName, ProductName)
+
+5--SalesPersonFullName, Câ?i bani a adus în firma, ?i cu câ?i bani l-am platit de la prima lui comanda pâna la ultima (luam în considerare doar hourly rate, fara bonus) având în vedere ca lucreaza 8h/zi.
+
+6--Folosind cele doua tabele (Credit ?i Insurance) returna?i doua coloane: prima coloana sa fie id-ul clientului ?i a doua sa fie id-ul poli?ei, daca are, sau id-ul creditului, daca are (Nu ave?i voie cu UNION)
+
+7--Clientii care n-au facut înca nicio comanda
+8--Cele mai profitabile trei produse
+9--Produsele care nu s-au vândut niciodata
+10--În ce orase a vândut fiecare SalesPerson
+
+11--Toti clien?ii si câte tipuri produse au cumparat
+12--Perioadele în care s-a vândut fiecare produs
+13--Folosind tabelul YearlySales returna?i trei coloane: anul, vânzarile din anul respectiv, ?i vânzarile din anul precedent
+
+XX--Clien?i care nu au facut comenzi în 2012
+
+
+
+  SELECT * FROM SalesPersons
+SELECT  Stanga.SalesPersonFirstName,Dreapta.SalesPersonFirstName
+FROM SalesPersons Stanga
+CROSS  JOIN SalesPersons Dreapta
+WHERE Stanga.SalesPersonFirstName <> Dreapta.SalesPersonFirstName
+
+ORDER BY Stanga.SalesPersonFirstName 
