@@ -75,3 +75,14 @@ FROM
 GROUP BY
     CONCAT(Customers.CustomerFirstName, ' ', Customers.CustomerLastName)
 _______________________________________________________________________________________________________________
+Introdus un client ID  , se returneaza venitul 
+   ALTER  FUNCTION myfun2 (@id nvarchar(35))
+  RETURNS nvarchar(50)
+  AS
+  BEGIN
+	DECLARE @n nvarchar(50)
+	SET @n = (SELECT SUM(OrderTotalDue) FROM Sales WHERE CustomerAccount = @id)
+	RETURN @n
+  END
+
+  SELECT dbo.myfun2('AW00029566')
